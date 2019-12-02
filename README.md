@@ -265,7 +265,7 @@ One of the tools for querying very large tables quickly is to implement a sort k
 Inherent to Redshift is a min and max value for each 1MB block for each column for each table. This in-memory structure is called the zone map. By identifying a sort key set of the columns, Redshift can amplify the effectiveness of the zone map. 
 
 ### Challenge #3a: Quantify the query benefit of Redshift automatically using the zone map on a table:
-Study the decrease in the amount of data scanned between the two queries, nothing that column ‘o\_totalprice’ isn’t part of the sort key. The decrease is attributed to Redshift leveraging the zone map and only looking at blocks where the ‘o_totalprice’ for a particular block is between the min and max according to the zone map. No user action is ever required with respect to the zone map, it’s an embedded and automatic feature of the service.
+Study the decrease in the amount of data scanned between the two queries, noting that column ‘o\_totalprice’ isn’t part of the sort key. The decrease is attributed to Redshift leveraging the zone map and only looking at blocks where the ‘o_totalprice’ for a particular block is between the min and max according to the zone map. No user action is ever required with respect to the zone map, it’s an embedded and automatic feature of the service.
 
 ```
 SELECT MIN(o_totalprice) FROM public.orders WHERE o_totalprice < 812;
