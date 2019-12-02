@@ -67,7 +67,7 @@ ORDER BY A.ATTNUM;
 
 ### Challenge #1c: Use the (simulated) Redshift Advisor and compare the impact of compressed and uncompressed columns
 
-The Redshift Advisor is an important element of Redshift’s ease of use proposition. The Advisor will warn if there are tables without compression, which in turn leads to scanning work than would otherwise be required to execute the query.
+The Redshift Advisor is an important element of Redshift’s ease of use proposition. The Advisor will warn if there are tables without compression, which in turn leads to more scanning work than would otherwise be required to execute the query.
 
 ![GitHub Logo](/images/toronto_advisor_compress_table.jpg)
 
